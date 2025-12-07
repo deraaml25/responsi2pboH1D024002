@@ -1,0 +1,45 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+Jelaskan perbedaan antara fungsi (function) dan prosedur (procedure) dalam pemrograman berorientasi objek.
+Mengapa penting menggunakan konstanta (final variables) dalam suatu kelas? Apa keuntungannya?
+Apa yang terjadi jika kita mencoba mengubah nilai suatu konstanta setelah objek dibuat? Berikan contoh.
+Bagaimana cara mendefinisikan konstanta dalam bahasa Java?
+
+Jawaban
+Jelaskan perbedaan antara fungsi (function) dan prosedur (procedure) dalam pemrograman berorientasi objek.
+    Fungsi (Function):
+    1.	Method yang mengembalikan nilai dengan tipe data tertentu (int, double, String, dll.)
+    2.	Menggunakan kata kunci return untuk mengirim nilai kembali
+    3.	Contoh fungsi dari function adalah double hitungBMI() dan double hitungKalori() mengembalikan nilai bertipe double yang masing-masing mengembalikan nilai BMI dan kebutuhan kalori.
+    Prosedur (Procedure):
+    1.	Method yang tidak mengembalikan nilai apapun, ditandai dengan kata kunci void, Dimana hanya menjalankan aksi atau operasi tanpa return value.
+    2.	Contoh prosedur dalam kode adalah tampilKategori() dan tampilInfo() yang berfungsi menampilkan informasi tanpa mengembalikan nilai. Perbedaan utama terletak pada tujuan penggunaannya: fungsi untuk komputasi yang menghasilkan nilai, sedangkan prosedur untuk eksekusi tindakan.
+
+Mengapa penting menggunakan konstanta (final variables) dalam suatu kelas? Apa keuntungannya?
+    1.	Keamanan Data: Mencegah perubahan nilai yang tidak disengaja atau tidak diinginkan
+    2.	Konsistensi: Memastikan nilai tetap sama di seluruh program (misal: faktorAktivitas = 1.2 adalah standar medis)
+    3.	Dokumentasi: Memberikan informasi bahwa nilai tersebut adalah standar atau aturan tetap
+    4.	Optimasi: Compiler dapat mengoptimalkan kode karena tahu nilai tidak akan berubah
+    5.	Debugging Lebih Mudah: Error akan muncul saat compile time jika ada usaha mengubah konstanta
+    6.	Intent yang Jelas: Menunjukkan kepada programmer lain bahwa nilai tersebut memang dirancang untuk tidak berubah
+
+Apa yang terjadi jika kita mencoba mengubah nilai suatu konstanta setelah objek dibuat? Berikan contoh.
+    Jika kita mencoba mengubah nilai konstanta, compiler Java akan menolak kode tersebut dan memberikan compile-time error.
+    Contoh:
+    Pengguna p = new Pengguna(25, 60.0, 170.0);
+    p.faktorAktivitas = 1.5;  // INI AKAN ERROR!
+    Pesan Error yang Muncul:
+    error: cannot assign a value to final variable faktorAktivitas
+    Program tidak akan bisa di-compile sampai baris kode yang mencoba mengubah konstanta dihapus atau dikomentari. Ini adalah fitur keamanan Java untuk melindungi integritas data.
+
+Bagaimana cara mendefinisikan konstanta dalam bahasa Java?
+    Gunakan kata kunci final sebelum tipe data:
+    Sintaks:
+    final tipeData namaKonstanta = nilai;
+    Contoh dalam kode:
+    class Pengguna {
+        final double faktorAktivitas = 1.2;  // Konstanta instance
+    }
+
+

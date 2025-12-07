@@ -1,0 +1,21 @@
+﻿SOAL PENGAYAAN (Refleksi Polimorfisme)
+Jawablah pertanyaan berikut:
+1. Apa yang dimaksud dengan polimorfisme dalam OOP? Jelaskan bagaimana metode override bekerja.
+   Polimorfisme (berasal dari bahasa Yunani yang berarti "banyak bentuk") adalah kemampuan sebuah objek untuk memiliki banyak bentuk.
+   Dalam Java, ini memungkinkan kita memperlakukan objek dari subclass (misalnya mesinMotor) seolah-olah mereka adalah objek dari superclass (misalnya defaultMesin).
+   Method Overriding adalah mekanisme yang memungkinkan subclass untuk menyediakan implementasi spesifik dari sebuah method yang sudah didefinisikan di superclass (parent).
+   Java akan menentukan implementasi mana yang dieksekusi saat runtime (proses eksekusi program), inilah yang disebut Dynamic Dispatch.
+2. Mengapa array bertipe DefaultMesin dapat menyimpan objek MesinMotor dan MesinTraktor?
+   Ini adalah inti dari Polimorfisme. Karena mesinMotor dan mesinTraktor adalah subclass (anak) dari defaultMesin (parent), maka secara hierarkis mereka dianggap sebagai defaultMesin juga (konsep "IS-A relationship").
+   Artinya, sebuah array yang dideklarasikan bertipe parent dapat menampung objek dari semua class anaknya.
+3. Apa perbedaan override dan overload?
+   Perbedaan mendasar antara Method Overloading dan Method Overriding terletak pada konteksnya.
+   Overloading terjadi dalam satu class yang sama, yaitu ketika method memiliki nama identik tetapi signature (jumlah/tipe parameter) yang berbeda.
+   Tujuannya adalah menangani input data yang bervariasi. Sementara itu, Overriding terjadi dalam hubungan Inheritance (Parent-Child), di mana subclass mendefinisikan ulang method milik superclass dengan nama dan signature yang sama persis,
+   bertujuan untuk mengubah atau menyesuaikan perilaku yang diwarisi.
+4. Apa keuntungan menggunakan polimorfisme dalam sistem inventaris seperti contoh di atas?
+5. Bagaimana cara kerja dynamic dispatch pada Java saat memanggil method override?
+   Dynamic Dispatch adalah mekanisme yang dilakukan Java saat program berjalan (runtime).
+   - Ketika kode memanggil mesinArray[i].nilaiPerforma(), Java akan mengabaikan tipe referensi (defaultMesin).
+   - Java akan melihat tipe objek aktual yang ada di dalam array tersebut (misalnya, objek tersebut benar-benar mesinMotor).
+   - Selanjutnya Java akan mengeksekusi implementasi nilaiPerforma() yang ada di dalam class mesinMotor, bukan versi defaultMesin.

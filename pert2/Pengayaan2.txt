@@ -1,0 +1,31 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+Apa yang dimaksud dengan constructor overloading dalam pemrograman berorientasi objek?
+Bagaimana cara Java membedakan constructor yang memiliki nama sama namun parameter berbeda?
+Apa perbedaan antara mengakses variabel secara langsung (misalnya: objek.variabel = nilai) dengan menggunakan method setter?
+Jelaskan konsep encapsulation dan bagaimana method dapat membantu melindungi data dalam sebuah class!
+Mengapa constructor tidak memiliki return type, bahkan tidak menggunakan kata kunci void?
+
+Jawaban
+
+1.  Apa yang dimaksud dengan constructor overloading dalam pemrograman berorientasi objek?
+    Constructor overloading adalah kemampuan dalam pemrograman berorientasi objek untuk memiliki lebih dari satu constructor dalam sebuah class.
+    Setiap constructor memiliki nama yang sama dengan nama class-nya, tetapi memiliki daftar parameter yang berbeda (jumlah, tipe data, atau urutan parameternya).
+    Hal ini memungkinkan pembuatan objek dengan berbagai cara inisialisasi.
+2.  Bagaimana cara Java membedakan constructor yang memiliki nama sama namun parameter berbeda?
+    Java membedakan constructor yang memiliki nama sama melalui signature method-nya.
+    Signature ini terdiri dari nama method dan daftar parameternya. Selama jumlah, tipe data, atau urutan parameter berbeda,
+    Java menganggapnya sebagai constructor yang unik dan akan memilih yang sesuai berdasarkan argumen yang diberikan saat pembuatan objek.
+3.  Apa perbedaan antara mengakses variabel secara langsung (misalnya: objek.variabel = nilai) dengan menggunakan method setter?
+    Perbedaannya terletak pada kontrol dan keamanan data. Mengakses variabel secara langsung memberikan kebebasan penuh tanpa batasan,
+    yang bisa berisiko kesalahan data. Sedangkan menggunakan method setter memungkinkan kita menambahkan logika validasi atau aturan bisnis sebelum nilai variabel diubah,
+    sehingga data lebih aman dan terkontrol.
+4.  Jelaskan konsep encapsulation dan bagaimana method dapat membantu melindungi data dalam sebuah class!
+    Encapsulation atau enkapsulasi adalah konsep membungkus data (variabel) dan perilaku (method) menjadi satu unit (class) serta menyembunyikan detail implementasi dari luar.
+    Method membantu melindungi data dengan bertindak sebagai gerbang akses. Variabel dibuat private agar tidak bisa diakses sembarangan,
+    dan perubahan hanya bisa dilakukan melalui method publik (seperti setter) yang sudah memiliki aturan validasi.
+5.	Mengapa constructor tidak memiliki return type, bahkan tidak menggunakan kata kunci void?
+    Constructor tidak memiliki return type dan tidak menggunakan void karena fungsi utamanya spesifik untuk menginisialisasi objek baru,
+    bukan mengembalikan nilai seperti method biasa. Secara implisit, ketika constructor dipanggil dengan kata kunci new,
+    ia akan mengembalikan instance (wujud objek) dari class tersebut.

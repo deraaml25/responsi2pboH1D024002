@@ -1,0 +1,24 @@
+[PERTANYAAN PENGAYAAN]
+
+1. Mengapa constructor di class Member wajib memanggil constructor Customer menggunakan super(...)?
+   Constructor subclass (Member) wajib memanggil super(...) karena subclass mewarisi properti dari superclass (Customer).
+   Properti yang diwarisi tersebut (nama, idCustomer, totalBelanja) harus diinisialisasi oleh constructor superclass terlebih dahulu.
+   Java memastikan bahwa inisialisasi bagian parent dari objek selesai sebelum inisialisasi bagian child dimulai.
+2. Apa tujuan memanggil super.tampilkanInfo() saat melakukan overriding method di subclass?
+   Tujuannya adalah untuk menggunakan kembali (reuse) logika kode dari parent method.
+   Dengan memanggil super.tampilkanInfo(), class Member dapat mencetak informasi dasar Customer (Nama, ID, Total Belanja) tanpa harus menulis ulang kode tersebut.
+   Class Member kemudian hanya perlu menambahkan kode untuk mencetak informasi spesifiknya (Poin Reward dan Level).
+3. Berikan contoh kondisi di mana pemanggilan super.method() sangat penting dalam pewarisan.
+   Pemanggilan super.method() sangat penting ketika subclass ingin menambahkan fungsionalitas atau detail pada perilaku yang diwarisi, bukan menggantinya secara total.
+   Contoh paling relevan di kode ini adalah pada method tampilkanInfo() di class Member, yang harus menampilkan semua data (dasar Customer + tambahan Member).
+   Jika super.tampilkanInfo() tidak dipanggil, informasi dasar (Nama, ID, Total Belanja) tidak akan tercetak.
+4. Bagaimana keyword super membantu membedakan atribut yang memiliki nama sama antara parent dan child?
+   Keyword super berfungsi sebagai penunjuk yang eksplisit kepada properti atau method milik parent class.
+   Jika class Customer dan Member sama-sama memiliki variabel bernama nama:
+   - this.nama: Merujuk pada variabel nama milik class Member.
+   - super.nama: Merujuk pada variabel nama milik class Customer (superclass).
+5. Mengapa pendekatan inheritance lebih efisien dibanding menyalin ulang seluruh atribut dan method ke dalam class Member?
+   Pendekatan Inheritance lebih efisien karena mengimplementasikan prinsip Code Reusability. Dengan Member extends Customer ,
+   class Member secara otomatis mendapatkan semua atribut dan method milik Customer.
+   Ini mengurangi redundansi kode (tidak perlu menyalin ulang nama, idCustomer, dll.)
+   dan membuat pemeliharaan lebih mudah. Jika ada perubahan pada struktur dasar Customer, hanya class Customer yang perlu diubah.

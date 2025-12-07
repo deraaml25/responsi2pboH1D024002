@@ -1,0 +1,20 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+1. Apa itu abstract class dan Kenapa kita membutuhkan Abstarct class?
+   Abstract Class adalah class yang tidak dapat di-instantiate (dibuat objeknya secara langsung), dan hanya berfungsi sebagai kerangka dasar (blueprint) yang wajib diwarisi oleh subclass.
+   Kita membutuhkan Abstract Class untuk mendefinisikan kontrak (interface) umum bagi sekelompok class yang memiliki karakteristik dasar yang sama, namun memiliki perilaku spesifik yang berbeda-beda (melalui abstract method).
+2. Apa perbedaan utama antara abstract class dan class biasa dalam pemrograman berorientasi objek?
+   Abstract Class (seperti KendaraanGalaksi) adalah kerangka dasar (kontrak) yang tidak bisa di-instantiate (dibuat objeknya secara langsung),
+   yang ditandai dengan keyword abstract pada deklarasinya. Tujuan utamanya adalah memaksa class anak (subclass) untuk mengimplementasikan Abstract Method yang tidak memiliki isi (body) di parent.
+   Sebaliknya, Class Biasa (seperti PesawatTempur) adalah implementasi konkret, yang bisa dibuat objeknya secara langsung, dan semua method-nya harus memiliki implementasi penuh.
+3. Mengapa subclass wajib mengimplementasikan semua abstract method dari parent class?
+   Karena abstract method di parent (seperti jelajah() di KendaraanGalaksi) tidak memiliki isi (implementasi).
+   Subclass wajib menyediakan isi (implementasi) yang spesifik (misalnya, menghabiskan energi jarak x 3 di Pesawat Tempur) agar class tersebut dapat dibuat objeknya dan berfungsi.
+4. Mengapa abstract method tidak boleh memiliki isi implementasi di dalam abstract class?
+   Abstract method berfungsi sebagai aturan atau perintah (kontrak) yang harus dipatuhi. Jika abstract method memiliki isi, maka fungsi tersebut sudah spesifik dan tidak lagi abstract.
+   Tujuannya adalah untuk memaksa subclass menentukan implementasi uniknya sendiri, bukan mengikuti implementasi default dari parent.
+5. Bagaimana abstract class dapat mendukung konsep polimorfisme, dan mengapa objek yang direferensikan melalui tipe abstract class tetap dapat menjalankan perilaku berbeda pada masing-masing subclass?
+   Abstract class mendukung polimorfisme karena objek dari subclass (PesawatTempur, KapalEksplorasi) dapat disimpan dalam tipe referensi abstract parent (KendaraanGalaksi).
+   Meskipun menggunakan tipe referensi yang sama, perilaku yang berbeda tetap muncul karena Java menggunakan Dynamic Dispatch. Saat kendaraan.jelajah(10) dipanggil,
+   Java akan mengeksekusi implementasi jelajah() yang benar-benar ada di objek aslinya (PesawatTempur atau KapalEksplorasi), yang mana implementasi tersebut unik (beda konsumsi energi).

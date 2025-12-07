@@ -1,0 +1,16 @@
+Setelah anda menyelesaikan kode, tolong jawab pertanyaan dibawah ini ya =
+
+
+1. Apa tujuan utama adanya interface dalam pemrograman berorientasi objek, dan bagaimana interface membantu menciptakan kontrak perilaku?
+   Interface adalah kontrak yang mendefinisikan apa yang harus dilakukan tanpa menjelaskan bagaimana melakukannya. Interface memaksa class yang mengimplementasikannya untuk menyediakan method tertentu, sehingga menciptakan standar perilaku yang konsisten.
+   Seperti kontrak kerja yang menjamin karyawan punya kemampuan dasar tertentu, interface menjamin class punya method yang dijanjikan. Ini memudahkan programmer bekerja dengan banyak class berbeda karena tahu semua punya method yang sama.
+2. Mengapa interface dapat memiliki banyak implementasi, dan apa makna konseptual dari kemampuan tersebut dalam desain sistem?
+   Satu interface bisa diimplementasikan banyak class karena interface hanya mendefinisikan "APA" (kontrak), bukan "BAGAIMANA" (implementasi). Ini seperti standar "karyawan harus bisa login", tapi cara login bisa berbeda: programmer pakai PIN, manager pakai sidik jari, direktur pakai face recognition.
+   Konsep ini memberikan fleksibilitas—satu aturan bisa diterapkan dengan cara berbeda sesuai kebutuhan masing-masing class, namun tetap menjamin semua punya kemampuan dasar yang sama.
+3. Apa perbedaan mendasar antara extends dan implements dalam konteks interface, jika dilihat secara konsep tanpa melihat contoh kode?
+   Extends = mewarisi implementasi lengkap dari parent class (dapat kode dan perilaku). Implements = menerima kontrak kosong yang wajib diisi sendiri. Extends seperti menerima warisan rumah lengkap dengan isi, implements seperti menerima blueprint rumah yang harus dibangun sendiri. Extends terbatas satu parent (single inheritance), implements bisa banyak sekaligus (multiple interface). Extends untuk hubungan "IS-A" yang kuat, implements untuk kemampuan "CAN-DO" yang fleksibel.
+4. Apa alasan diperkenalkannya default method dalam interface, dan bagaimana fitur ini memengaruhi keberlangsungan (compatibility) suatu sistem yang sudah berjalan?
+   Default method diperkenalkan untuk menambah fitur baru ke interface tanpa merusak class yang sudah mengimplementasinya. Sebelum ada default method, menambah method baru ke interface akan memaksa SEMUA class implementasi untuk update (breaking change). Dengan default method, class lama tetap jalan normal (pakai implementasi default), class baru bisa override jika perlu custom behavior. Ini menjaga backward compatibility—sistem lama tidak rusak saat ada penambahan fitur baru.
+5. Bagaimana konsep multiple interface memperluas fleksibilitas desain tanpa menimbulkan masalah kompleksitas yang biasa muncul pada multiple inheritance?
+   Multiple interface aman karena hanya berisi kontrak (method signature), bukan implementasi. Masalah multiple inheritance adalah "diamond problem"—child bingung pakai implementasi parent yang mana jika ada method sama. Interface tidak punya masalah ini karena tidak ada implementasi yang bentrok—class wajib buat implementasi sendiri. Ini seperti orang bisa punya banyak skill (coding, design, management)
+   tanpa konflik, karena tiap skill didefinisikan tapi cara menggunakannya diserahkan ke orangnya. Fleksibilitas tinggi, kompleksitas rendah.

@@ -1,0 +1,19 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+1. Apa perbedaan antara interface dengan class biasa?
+   Perbedaan utama antara Interface dan Class Biasa (Concrete Class) adalah pada tujuannya.
+   Sebuah Interface (seperti PaymentMethod) hanya berfungsi sebagai kontrak atau blueprint untuk perilaku hanya berisi deklarasi method tanpa implementasi, serta konstanta.
+   Sementara itu, Class Biasa (seperti EWalletPayment) adalah cetak biru untuk objek yang sebenarnya, yang memiliki state (variabel) dan behavior (metode) dengan implementasi yang lengkap, serta dapat diinstansiasi menjadi objek.
+2. Mengapa interface tidak memiliki implementasi method di dalamnya?
+   Interface tidak memiliki implementasi method (kecuali default atau static method pada Java modern) karena tujuan utamanya adalah untuk menjamin Polimorfisme dan dekopling (pemisahan).
+3. Apa tujuan penggunaan keyword "implements" pada sebuah class?
+   Tujuan penggunaan keyword implements adalah untuk menyatakan secara eksplisit bahwa sebuah class setuju untuk mematuhi dan memenuhi kontrak yang didefinisikan oleh interface tertentu.
+   Dengan menggunakan implements, class tersebut diwajibkan untuk menyediakan implementasi konkret (method body) untuk semua abstract method yang ada di dalam interface.
+4. Apakah sebuah class dapat mengimplementasikan lebih dari satu interface? Jelaskan dan berikan contoh sederhana.
+   Ya, sebuah class dapat mengimplementasikan lebih dari satu interface.
+   Kemampuan ini adalah cara Java mendukung konsep Multiple Inheritance of Type (pewarisan tipe ganda), karena sebuah class tidak dapat meng-extend lebih dari satu class biasa.
+   Dengan mengimplementasikan banyak interface, sebuah class dapat memiliki banyak perilaku berbeda yang diwarisi dari sumber-sumber yang berbeda.
+5. Jika sebuah class mengimplementasikan interface, apa yang terjadi jika class tersebut tidak mengimplementasikan semua method dari interface tersebut?
+   Jika class konkret mengimplementasikan interface tetapi tidak mengimplementasikan semua abstract method yang ada, maka akan terjadi error kompilasi. Kompiler menganggap class tersebut melanggar kontrak.
+   Solusinya adalah dengan mengimplementasikan semua method yang wajib atau mendeklarasikan class tersebut sebagai abstract class.
